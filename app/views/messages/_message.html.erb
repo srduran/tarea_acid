@@ -1,5 +1,9 @@
-<div class="message">
+<div class="container">
   <% message.each do |message_text| %>
-    <p><%= message_text %></p>
+    <div class="card bg-light mb-3" style="max-width: 70rem;">
+      <div class="card-body light">
+        <p class="card-text"><%= message_text %></p>
+      </div>
+    </div>
   <% end %>
 </div>
