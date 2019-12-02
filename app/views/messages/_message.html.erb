@@ -1,3 +1,5 @@
 <div class="message">
-  <p><%= message.content %></p>
+  <% message.each do |message_text| %>
+    <p><%= message_text %></p>
+  <% end %>
 </div>

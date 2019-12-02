@@ -6,13 +6,13 @@ App.room = App.cable.subscriptions.create "RoomChannel",
     # Called when the subscription has been terminated by the server
 
   received: (data) ->
-    $('#messages').append data['message']
+    $('#messages').html data['message']
 
-  speak: (message) ->
-    @perform 'speak', message: message
+  speak: ->
+    @perform 'speak'
 
 refreshPartial= ->
-  App.room.speak("123")
+  App.room.speak()
 
 $(document).ready ->
   setInterval refreshPartial, 5000
