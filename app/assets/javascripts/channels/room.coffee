@@ -8,11 +8,11 @@ App.room = App.cable.subscriptions.create "RoomChannel",
   received: (data) ->
     $('#messages').append data['message']
 
-  speak: ->
-    @perform 'speak'
+  speak: (message) ->
+    @perform 'speak', message: message
 
 refreshPartial= ->
-  App.room.speak
+  App.room.speak("123")
 
 $(document).ready ->
   setInterval refreshPartial, 5000
